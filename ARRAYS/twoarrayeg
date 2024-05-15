@@ -1,0 +1,17 @@
+//User input in two dimensional array.
+
+#include<stdio.h>
+int main()
+{
+    int i,j,x[3][4];
+    //i=row,j=colmn
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<4;j++)
+        {
+            printf("Element : [%d][%d] = ",i,j);
+            scanf("%d",&x[i][j]);
+        }
+    }
+    return 0;
+}
