@@ -57,14 +57,14 @@ void substring_search(char string[], char substring[])
             count_2 = 0;
         }
     }
-    if(count_1 == length && count_2 == 0)
-    {
-        printf("\nThe substring is exists in the string.\n");
-    }
-    else
-    {
+    // if(count_1 == length && count_2 == 0)
+    // {
+        // printf("\nThe substring is exists in the string.\n");
+    // }
+    // else
+    // {
         printf("\nThe substring is not exists in the string.\n");
-    }
+    // }
     out :
 }
 
