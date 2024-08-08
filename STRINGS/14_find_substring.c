@@ -28,41 +28,44 @@ int main()
 
 void substring_search(char string[], char substring[])
 {
-    int i, j = 0, count = 0;
+    int i, j = 0, count_1 = 0, count_2 = 0;
     int length = string_length(substring);
 
-    printf("\nlength is : %d",length);
-    for(i = 0; string[i] != '\n'; i++)
+    for(i = 0; string[i] != '\0'; i++)
     {
         if(string[i] != ' ')
         {
             if((string[i] == substring[j]) && (j < length))
             {
-                // count++;
+                count_1++;
                 j++;
             }
-            // else
-            // {
-                count++;
-            // }
+            else
+            {
+                count_2++;
+            }
         }
-        else if(count == length)
+        else if((count_1 == length) && (count_2 == 0))
         {
-            printf("\nCount : %d",count);
             printf("\nThe substring is exists in the string.\n");
             goto out;
         }
         else
         {
             j = 0;
-            count = 0;
+            count_1 = 0;
+            count_2 = 0;
         }
     }
-    out :
-    if(count == 0 || count > length)
+    if(count_1 == length && count_2 == 0)
+    {
+        printf("\nThe substring is exists in the string.\n");
+    }
+    else
     {
         printf("\nThe substring is not exists in the string.\n");
     }
+    out :
 }
 
 
@@ -72,10 +75,28 @@ int string_length(char str[])
 {
     int count = 0;
     
-    for(int i = 0; str[i] != '\n' || '\0'; i++)
+    for(int i = 0; str[i] != '\n'; i++)
     {
         count++;
     }
 
     return count;
 }
+
+/*
+
+output 1 :
+
+Input the string : this is test string
+Input the substring to be search : this
+
+The substring is exists in the string.
+
+output 2 :
+
+Input the string : thisis test string
+Input the substring to be search : this
+
+The substring is not exists in the string.
+
+*/
