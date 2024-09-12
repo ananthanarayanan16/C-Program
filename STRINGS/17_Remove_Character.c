@@ -12,3 +12,8 @@ void main()
     fgets(string, sizeof(string), stdin);
     printf("After removing the output string : %s", remove(string));
 }
+
+char remove(char str[])
+{
+    
+}
