@@ -5,7 +5,7 @@
 
 // FUNCTION DECLERATION
 
-void remove(char []);
+int remove(char []);
 
 //  MAIN FUNCTION
 
@@ -21,7 +21,7 @@ void main()
 
 // REMOVE FUNCTION DEFINITION
 
-void remove(char string[])
+int remove(char string[])
 {
     int i,j;
     for(i = 0; string[i] != '\0'; i++)
