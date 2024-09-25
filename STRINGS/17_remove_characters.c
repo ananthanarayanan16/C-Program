@@ -1,40 +1,41 @@
-//WRITE A PROGRAM IN C TO REMOVE CHARACTERS FROM A STRING EXCEPT ALPHABETS
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>  // For isalpha() function
 
-#include<stdio.h>
-#include<string.h>
+// FUNCTION DECLARATION
+void remove_non_alphabets(char[]);
 
-// FUNCTION DECLERATION
-
-int remove(char []);
-
-//  MAIN FUNCTION
-
-void main()
+// MAIN FUNCTION
+int main()
 {
     char string[100];
 
-    printf("Input the string : ");
+    printf("Input the string: ");
     fgets(string, sizeof(string), stdin);
 
-    remove(string);
+    // Remove the newline character from fgets input if present
+    string[strcspn(string, "\n")] = '\0';
+
+    remove_non_alphabets(string);
+
+    printf("After removing characters except alphabets: %s\n", string);
+
+    return 0;
 }
 
 // REMOVE FUNCTION DEFINITION
-
-int remove(char string[])
+void remove_non_alphabets(char string[])
 {
-    int i,j;
-    for(i = 0; string[i] != '\0'; i++)
+    int i, j;
+    for (i = 0; string[i] != '\0'; i++)
     {
-        if((string[i] < 65 && string[i] > 90) || (string[i] < 96 && string[i] > 122))
+        if (!isalpha(string[i]))  // If the character is not an alphabet
         {
-            for(j = i; string[j] != '\0'; j++)
+            for (j = i; string[j] != '\0'; j++)
             {
                 string[j] = string[j + 1];
             }
-            string[j] = '\0';
+            i--;  // Since the array shifts left, we need to decrement `i`
         }
-    }   
-
-    printf("After removing characters except alphabets : %s", string);
+    }
 }
