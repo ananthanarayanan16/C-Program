@@ -13,7 +13,6 @@ int main()
     printf("Input the string: ");
     fgets(string, sizeof(string), stdin);
 
-    // Remove the newline character from fgets input if present
     string[strcspn(string, "\n")] = '\0';
 
     remove_non_alphabets(string);
@@ -29,13 +28,13 @@ void remove_non_alphabets(char string[])
     int i, j;
     for (i = 0; string[i] != '\0'; i++)
     {
-        if (!isalpha(string[i]))  // If the character is not an alphabet
+        if (!isalpha(string[i]))   
         {
             for (j = i; string[j] != '\0'; j++)
             {
                 string[j] = string[j + 1];
             }
-            i--;  // Since the array shifts left, we need to decrement `i`
+            i--;  
         }
     }
 }
