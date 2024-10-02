@@ -1,40 +1,47 @@
-#include <stdio.h>
-#include <string.h>
-#include <ctype.h>  // For isalpha() function
+// WRITE A PROGRAM IN C TO REMOVE CHARACTER FROM A STRING EXCEPT ALPHABETS.
 
-// FUNCTION DECLARATION
-void remove_non_alphabets(char[]);
+#include<stdio.h>
 
-// MAIN FUNCTION
+void delete(char []);
+
 int main()
 {
     char string[100];
 
-    printf("Input the string: ");
+    printf("Input the string : ");
     fgets(string, sizeof(string), stdin);
 
-    string[strcspn(string, "\n")] = '\0';
 
-    remove_non_alphabets(string);
-
-    printf("After removing characters except alphabets: %s\n", string);
+    delete(string);
 
     return 0;
 }
 
-// REMOVE FUNCTION DEFINITION
-void remove_non_alphabets(char string[])
+void delete(char string[])
 {
-    int i, j;
-    for (i = 0; string[i] != '\0'; i++)
+    int i,j;
+
+    for(i = 0; string[i] != '\0'; i++)
     {
-        if (!isalpha(string[i]))   
+        if(!(string[i] >= 'a' && string[i] <= 'z') || (string[i] >= 'A' && string[i] <= 'Z'))
         {
-            for (j = i; string[j] != '\0'; j++)
+            for(j = i; string[j] != '\0'; j++)
             {
-                string[j] = string[j + 1];
+                string[j] = string[j+1];
             }
-            i--;  
+            i--;
         }
     }
+
+    printf("After remove charactes except alphabet : %s\n", string);
 }
+
+
+/*
+
+output : 
+
+Input the string : w3resourse.com
+After remove charactes except alphabet : wresoursecom
+
+*/
