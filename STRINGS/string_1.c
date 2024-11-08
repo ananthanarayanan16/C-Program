@@ -1,13 +1,12 @@
-// WRITE A STRING PROGRAM IN C.
+// write a c program in c to find a string
 
 #include<stdio.h>
 #include<string.h>
 
 void main()
 {
-    char string[1000];
-    printf("Input the string : ");
-    fgets(string, sizeof(string), stdin);
+    char str[100];
 
-    puts(string);
+    printf("Input the string : ");
+    fgets(str, sizeof(str), stdin);
 }
