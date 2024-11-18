@@ -5,9 +5,9 @@
 void main()
 {
 	int num1,num2;
-	printf("Tes Data : ");
+	printf("Test Data : ");
 	scanf("%d%d",&num1,&num2);
-	if(num1==num2)
+	if(num1 == num2)
 	{
 		printf("Number 1 and Number 2 are equal.");
 	}

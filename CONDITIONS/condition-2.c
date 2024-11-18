@@ -5,12 +5,12 @@ void main()
 {
 	int x;
 	printf("Test Data : ");
-	scanf("%d",&x);
-	if(x==0)
+	scanf("%d", &x);
+	if(x == 0)
 	{
 		printf("%d is not odd and even integer.",x);
 	}
-	else if(x%2==0)
+	else if(x % 2 == 0)
 	{
 		printf("%d is an even integer.",x);
 	}
