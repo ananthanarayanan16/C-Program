@@ -3,11 +3,11 @@
 #include<stdio.h>
 #include<string.h>
 
-// DECLARATION FUNCTION
+// FUNCTION DECLARATION
 
-void largest(char []);
+void largest_word(char []);
 
-void smallest(char []);
+void smallest_word(char []);
 
 // MAIN FUNCTION
 
@@ -15,97 +15,122 @@ void main()
 {
     char string[100];
 
-    printf("Enter the string : ");
+    printf("Input the string : ");
     fgets(string, sizeof(string), stdin);
 
     // FUNCTION CALLING
 
-    largest(string);
-    smallest(string);
+    largest_word(string);
 
-    printf("\n in the string : %s", string);
+    smallest_word(string);
+
+    printf("\nIn the string : %s", string);
 }
 
-// DEFINITION LARGEST() FUNCTION
+// FUNCTION DEFINITION
 
-void largest(char str[])
+// LARGEST WORD FUNCTION
+
+void largest_word(char str[])
 {
-    char large_string[50];
-    int i, start, end, k, m = 0, max = 0, count = 0;
+    int count = 0, max = 0, n = 0, start, end;
 
-    for(i = 0; str[i] != '\0'; i++)
+    for (int i = 0; str[i] != '\n'; i++)
     {
-        k = m;
-        if((str[i] >= 'A' && str[i] <= 'Z') ||(str[i] >= 'a' && str[i] <= 'z'))
+        if((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z'))
         {
             count++;
         }
         else if(max < count)
         {
             max = count;
-            start = k;
-            end = i;
+            start  = n;
+            end = i - 1;
             count = 0;
+            n = i + 1;
         }
         else
         {
-            m = i+1;
             count = 0;
+            n = i + 1;
         }
     }
-   
-    k = 0;
-    for(i = start; i <= end; i++)
-    {
-        large_string[k] = str[i];
-        k++;
-    }
-    large_string[i] = '\0';
+ 
+    char word[50];
+    int k = 0;
 
-    printf("The largest word is %s.\n", large_string);
+    for (int i = start; i <= end; i++, k++)
+    {
+        word[k] = str[i];
+    }
+    word[k] = '\0';
+
+    printf("\nThe largest word is : '%s'", word);
 }
 
-// DEFINITION SMALLEST() FUNCTION
+// SMALLEST WORD FUNCTION
 
- void smallest(char str[])
- {
-    char small_string[30];
-    int i, k, m = 0, count = 0, start, end, min = 0;
+void smallest_word(char str[])
+{
+    char count = 0, min = 0, n = 0, start, end;
 
-    for(i = 0; str[i] != '\0'; i++)
+    for(int i = 0; str[i] != '\n'; i++)
     {
-        k = m;
         if((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z'))
         {
             count++;
         }
-        // else if(min = 0)
-        // {
-        //     min = count;
-        //     start = k;
-        //     end = i;
-        //     count = 0;
-        // }
+        else if(min == 0)
+        {
+            min = count;
+            start = n;
+            end = i - 1;
+            count = 0;
+            n = i + 1;
+        }
         else if(min > count)
         {
             min = count;
-            start = k;
-            end = i;
-            count  = 0;
+            start = n;
+            end = i -1;
+            count = 0;
+            n = i + 1;
         }
         else
         {
-            m = i+1;
             count = 0;
+            n = i + 1;
         }
     }
-    k = 0;
-    for(i = start; i <= end; i++)
-    {
-        small_string[k] = str[i];
-        k++;
-    }
-    // small_string[i] = '\0';
 
-    printf("The smallest word is '%s'.", small_string);
- }
+    char word[10];
+    int k = 0;
+    for(int i = start; i <= end; i++, k++)
+    {
+        word[k] = str[i];
+    }
+    word[k] = '\0';
+
+    printf("\nThe smallest word is : '%s'", word);
+}
+
+
+/*
+
+output 1:
+
+Input the string : My name is Anantha Narayanan
+
+The largest word is : 'Anantha'
+The smallest word is : 'My'
+In the string : My name is Anantha Narayanan
+
+output 2:
+
+Input the string : It is a string with smallest and largest word
+
+The largest word is : 'smallest'
+The smallest word is : 'a'
+In the string : It is a string with smallest and largest word
+
+*/
