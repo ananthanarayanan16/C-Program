@@ -1,14 +1,13 @@
-// write a string program in C
+ // write a program in c to write a string
 
-#include<stdio.h>
-#include<string.h>
+ #include<stdio.h>
 
-void main()
-{
-    char ch[100];
+ void main()
+ {
+    char ch;
 
-    printf("Enter a string : ");
-    scanf("%s", &ch);
+    printf("Input the string : ");
+    scanf("%c", &ch);
 
-    printf("The give string is : %s\n", ch);
-}
+    
+ }
