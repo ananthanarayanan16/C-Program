@@ -1,13 +1,13 @@
- // write a program in c to write a string
+// WRITE A PROGRAM IN C TO FIND A STRING
 
- #include<stdio.h>
+#include<stdio.h>
 
- void main()
- {
-    char ch;
+void main()
+{
+   char str[100];
 
-    printf("Input the string : ");
-    scanf("%c", &ch);
+   printf("Enter a string : ");
+   scanf("%s", &str);
 
-    
- }
+   printf("The given string : %s", str);
+}
