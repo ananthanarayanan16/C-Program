@@ -75,15 +75,15 @@ void new_string(char str_1[], char str_2[])
       // new_str[i] = str_1[i];
       if(str_1[i] == 'a' || str_1[i] == 'e' || str_1[i] == 'i' || str_1[i] == 'o' || str_1[i] == 'u' || str_1[i] == 'A' || str_1[i] == 'E' || str_1[i] == 'I' || str_1[i] == 'O' || str_1[i] == 'U')
       {
-         new_str[i] = str_2[len_2];
+         str_1[i] = str_2[len_2 - 1];
          len_2--;
       }
-      else
-      {
-         new_str[i] = str_1[i];
-      }
-      printf("%c\n ", new_str[i]);
+      // else
+      // {
+         // new_str[i] = str_1[i];
+      // }
+      // printf("%c\n ", new_str[i]);
    }
-   new_str[i] = '\0';
-   // printf("The given string : %s", );
+   // new_str[i] = '\0';
+   printf("The given string : %s", str_1);
 }
