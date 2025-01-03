@@ -9,11 +9,11 @@ char string(int);
 void main()
 {
     int num_1, num_2, result;
-    char str_1[100], str_2[100], product[100];
+    char str_1, str_2[100], product[100];
 
 
     printf("Enter a string : ");
-    scanf("%s", &str_1);
+    scanf("%c", &str_1);
 
-    printf("The give string : %s", str_1);
+    printf("The give string : %c", str_1);
 }
