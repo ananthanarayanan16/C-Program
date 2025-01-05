@@ -22,11 +22,11 @@ void main()
     fgets(str_2, sizeof(str_2), stdin);
 
     num_1 = number(str_1);
-    printf("Num = %d\n", num_1);
+    // printf("Num = %d\n", num_1);
 
     num_2 = number(str_2);
 
-    printf("Num = %d\n", num_2);
+    // printf("Num = %d\n", num_2);
 
     res = num_1 * num_2;
     // printf("Res = %d\n", result);
@@ -41,7 +41,7 @@ int number(char str[])
 {
     int i, num = 0;
 
-    printf("String : %s\n", str);
+    // printf("String : %s\n", str);
 
     for(i = 0; str[i] != '\0'; i++)
     {
@@ -49,66 +49,50 @@ int number(char str[])
         {
             num = num * 10 + str[i] - 48;
 
-            printf("num = %d\n", num);
+            // printf("num = %d\n", num);
         }
     }
-    printf("Num  = %d\n", num);
+    // printf("Num  = %d\n", num);
     return num;
 }
 
 // CONVERTING INTEGER TO STRING
 
-// void strings(int res)
-// {
-//     printf("N = %d", res);
-//     char str[100];
-//     int i, count = 0, n;
-
-//     n = res;
-
-//     printf("n = %d, res = %d", n, res);
-//     while(n > 0)
-//     {
-//         count++;
-//         n = n /10;
-//     }
-
-//     for(i = count - 1; i >= 0; i++)
-//     {
-//         str[i] = res % 10;
-//         res = res / 10;
-//     }
-
-//     str[count] = '\0';
-
-//     printf("Multiple two said number represent as string : %s", str);
-// }
-
 int string(int res)
 {
-    printf("res = %d", res);
+    // printf("res = %d", res);
 
     int n, count = 0;
     char str[50];
     n = res;
 
-    printf("N = %d", n);
+    // printf("N = %d", n);
 
     while(n > 0)
     {
         n = n / 10;
         count++;
-        printf("count = %d\n", count);
+        // printf("count = %d\n", count);
     }
 
     for(int i = count - 1; i >= 0; i--)
     {
-        printf("res = %d\n", res);
-        printf("Res = %c\n", res % 10);
-        str[i] = ('0' - (res % 10));
+        // printf("res = %d\n", res);
+        // printf("Res = %d\n", res % 10);
+        str[i] = ('0' + (res % 10));
         res = res / 10;
-        printf("Str = %c\n", str[i]);
+        // printf("Str = %c\n", str[i]);
     }
     str[count] = '\0';
+    printf("Multiple two said number represent as string : %s \n", str);
 
 }
+
+/*
+output : 
+
+Input the first string : 100
+Input the second string : 15
+Multiple two said number represent as string : 1500 
+
+*/
