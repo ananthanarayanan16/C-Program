@@ -5,10 +5,10 @@
 
 void main()
 {
-    char ch[100];
+    char ch;
 
     printf("Enter a character : ");
-    scanf("%s", &ch);
+    scanf("%c", &ch);
 
-    printf("The given charactes : %s", ch);
+    printf("The given charactes : %c", ch);
 }
