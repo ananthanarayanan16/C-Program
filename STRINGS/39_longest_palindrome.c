@@ -34,7 +34,7 @@ void palindrome(char string[])
         {
             if(j <= i)
             {
-                if(string[k] == str[j])
+                if(string[k] == string[j])
                 {
                     if(m == 0)
                     {
@@ -47,6 +47,7 @@ void palindrome(char string[])
                             max = count;
                             start = m;
                             end = i;
+                            count = 0;
                         }
                     }
                     count++;
@@ -61,12 +62,13 @@ void palindrome(char string[])
             }
         }
     }
-    // for(i = start, j = 0; i <= end; i++, j++)
-    // {
-    //     str[j] = string[i];
-    // }
-    // str[j] = '\0';
-    // printf("palindrome : %s", str);
+    for(i = 10, j = 0; i <= 13; i++, j++)
+    {
+        printf("String : %c\n", string[i]);
+        str[j] = string[i];
+    }
+    str[j] = '\0';
+    printf("palindrome : %s", str);
 }
 
 int length(char str[])
