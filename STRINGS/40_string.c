@@ -5,10 +5,10 @@
 
 void main()
 {
-    char ch;
+    char ch[23];
 
     printf("Enter the characters : ");
-    scanf("%c", &ch);
+    scanf("%s", &ch);
 
-    printf("the given string : %c", ch);
+    printf("the given string : %s", ch);
 }
