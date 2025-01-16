@@ -27,11 +27,12 @@ void palindrome(char string[])
     // // len = length(string);
     // // printf("\nlength is : %d", len);
 
-    for(i = len - 1; i >= 0; i++)
+    // for(i = len - 1; i >= 0; i--)
     {
-        k = i;
+        k = len - 1;
         for(j = 0; j < len; j++)
         {
+            // printf("I = %d ", i);
             if(j <= i)
             {
                 if(string[k] == string[j])
@@ -48,10 +49,13 @@ void palindrome(char string[])
                             start = m;
                             end = i;
                             count = 0;
+                            // printf("\nmax = %d", max);
                         }
                     }
                     count++;
+                    // printf("\ncount : %d", count);
                     k--;
+                    // printf("\nk : %d", k);
                 }
                 else
                 {
@@ -62,13 +66,18 @@ void palindrome(char string[])
             }
         }
     }
-    for(i = 10, j = 0; i <= 13; i++, j++)
+    printf("\nStart : %d, end : %d\n", start, end);
+    // for(i = 10, j = 0; i <= 13; i++, j++)
+    // {
+    //     printf("String : %c\n", string[i]);
+    //     str[j] = string[i];
+    // }
+    // str[j] = '\0';
+    printf("palindrome : ");
+    for(i = start; i <= end; i++)
     {
-        printf("String : %c\n", string[i]);
-        str[j] = string[i];
+        printf("%c", string[i]);
     }
-    str[j] = '\0';
-    printf("palindrome : %s", str);
 }
 
 int length(char str[])
