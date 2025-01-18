@@ -47,12 +47,12 @@ void anagram(char str_1[], char str_2[])
 
 int length(char str[])
 {
-    int i, len = 0;
+    int i, count = 0;
 
     for(i = 0; str[i] != '\0' && str[i] != '\n'; i++)
     {
-        len++;
+        count++;
     }
 
-    return len;
+    return count;
 }
