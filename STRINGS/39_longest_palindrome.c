@@ -18,6 +18,8 @@ void main()
 
 void palindrome(char string[])
 {
+    char str[100];
+    
     // char str[100];
     // int len = length(string);
     // // printf("string : %s. length : %d", string, len);
