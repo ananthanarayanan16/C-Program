@@ -18,7 +18,7 @@ void main()
 
 void palindrome(char string[])
 {
-    char st;
+    char str[100];
     
     // char str[100];
     // int len = length(string);
