@@ -46,20 +46,31 @@ void anagram(char str_1[], char str_2[])
                     n = j;
                 }
             }
-            for(int k = 0; str_2[k] != '\0' && str_2[k] != '\n'; k++)
+            if(count_1 != 0)
             {
-                if(str_1[n] == str_2[k])
+                for(int k = 0; str_2[k] != '\0' && str_2[k] != '\n'; k++)
                 {
-                    count_2++;
+                    if(str_1[n] == str_2[k])
+                    {
+                        count_2++;
+                    }
                 }
             }
-            if(count_1 == count_2)
+            if(count_2 == 0)
+            {
+                printf("The given string are Not Anagram.\n");
+                flag++;
+                break;
+            }
+            else if(count_1 == count_2)
             {
                 continue;
+                count_1 = 0;
+                count_2 = 0;
             }
             else
             {
-                printf("The given strings are Not Anagram.\n");
+                printf("The given string are Not Anagram.\n");
                 flag++;
                 break;
             }
@@ -104,5 +115,11 @@ output 2:
 Enter the first string : pss
 Enter the second string : spp
 The given strings are Not Anagram.
+
+output 3:
+
+Enter the first string : hello           
+Enter the second string : world
+The given string are Not Anagram.
 
 */
