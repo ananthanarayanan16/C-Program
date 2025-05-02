@@ -15,6 +15,7 @@ void main()
 	{
 		printf("Number 1 and Number 2 are not equal.");
 	}
+	
 }
 
 /* OUTPUT:
