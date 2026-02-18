@@ -8,6 +8,7 @@ void main()
     int size,i,num=1000;
     printf("Input the no of student name : ");
     scanf("%d",&size);
+    getchar();
     char str[size][100];
     printf("Input %d student names : \n",size);
     for(i=0;i<size;i++)
@@ -24,6 +25,44 @@ void main()
     }
     sprintf(string,"%d",num);
     // string=(int)a*b;
-    printf("!@#$%^&*       %s",string);
-    
+    printf("The num is now String : %s \n",string);
+    // printf("a = %d", a[2]);
 }
+
+
+/*
+
+output :
+
+Input the no of student name : 4
+Input 4 student names : 
+str[0] - Ananth 
+str[1] - Sri
+str[2] - HappY
+str[3] - KyootE
+The given student name are : 
+
+str[0] - Ananth
+
+str[1] - Sri
+
+str[2] - HappY
+
+str[3] - KyootE
+The num is now String : 1000 
+
+*/
+
+
+
+
+
+// #include <stdlib.h>
+// #include<stdio.h>
+// int main()
+// {
+// int num = atoi(b);
+// printf("b = %d", num);
+// return 0;
+// }
+
