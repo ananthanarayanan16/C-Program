@@ -250,16 +250,45 @@
 // }
 
 
+// #include<stdio.h>
+// int main()
+// {
+//     char str[100];
+//     printf("Enter a string : ");
+//     // scanf("%s", str);          // Without read whitespaces
+//     // THIS READ WHITESPACE
+//     // scanf("%[^\n]",str);
+//     // gets(str);
+//     fgets(str,sizeof(str),stdin);
+//     printf("Given String : %s\n",str);
+//     return 100;
+// }
+
+// STRING ********************
 #include<stdio.h>
 int main()
 {
     char str[100];
-    printf("Enter a string : ");
-    // scanf("%s", str);          // Without read whitespaces
-    // THIS READ WHITESPACE
-    // scanf("%[^\n]",str);
-    // gets(str);
-    fgets(str,sizeof(str),stdin);
-    printf("Given String : %s\n",str);
-    return 100;
+    int size;
+    printf("Enter Size : ");
+    scanf("%d", &size);
+    char str1[size][50];
+    printf("Enter a String : ");
+    scanf(" %[^\n]", &str);
+    getchar();              // AFTER THE STRING THE NEWLINE STORE HERE
+    printf("Given string is : %s",str);
+    printf("\nGetting Multiple Names : ");
+    printf("\nEnter %d names : \n",size);
+    for(int i = 0; i < size; i++)
+    {
+        printf("%d name is : ",i);
+        fgets(str1[i],sizeof(str1[i]),stdin);
+    }
+    printf("\nThe given names are : \n");
+    for(int i = 0; i < size; i++)
+    {
+        printf("%d name is : ",i);
+        printf("%s\n",str1[i]);
+    }
+    return 0;
 }
