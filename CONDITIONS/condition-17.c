@@ -10,7 +10,7 @@ void main()
 	{
 		printf("The alphabet is vowel.");
 	}
-	else if((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z'))
+	else if((ch>= 97 &&ch<= 122)||(ch>='A'&&ch<='Z'))
 	{
 		printf("The alphabet is consonant");
 	}
